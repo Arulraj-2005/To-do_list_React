@@ -1,38 +1,139 @@
-.App {
-  text-align: center;
+:root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --accent: #7c3aed;
+  --muted: #94a3b8;
+  --text: #e6eef8;
+  --danger: #ef4444;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, Roboto, -apple-system, "Segoe UI", "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #071029 0%, #081026 100%);
+  color: var(--text);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.app {
+  min-height: 100%;
+  padding: 2rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 520px;
+  margin: 40px auto; /* Center horizontally */
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 12px;
+  padding: 1.6rem;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+}
+
+.header {
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+.counter {
+  font-size: 0.95rem;
+  color: var(--muted);
+  background: rgba(124,58,237,0.08);
+  padding: 4px 8px;
+  border-radius: 999px;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.input-row {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.input {
+  width: calc(100% - 70px);
+  padding: 0.7rem 0.9rem;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  color: var(--text);
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.input::placeholder {
+  color: rgba(148,163,184,0.5);
+}
+
+.btn {
+  padding: 0.7rem 0.9rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+  background: linear-gradient(90deg, var(--accent), #5b21b6);
   color: white;
+  box-shadow: 0 6px 18px rgba(124,58,237,0.15);
 }
 
-.App-link {
-  color: #61dafb;
+.btn:active { transform: translateY(1px); }
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 320px;
+  overflow: auto;
 }
+
+.list-item {
+  display: block;
+  padding: 0.6rem 0.4rem;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.item-text {
+  display: inline-block;
+  width: calc(100% - 80px);
+  font-size: 0.98rem;
+  color: var(--text);
+  word-break: break-word;
+}
+
+.delete-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 6px 8px;
+  border-radius: 8px;
+  color: var(--danger);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  float: right;
+}
+
+.empty {
+  text-align: center;
+  padding: 1.2rem;
+  color: var(--muted);
+}
+
